@@ -1,40 +1,37 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HTML account menu</title>
-    <link rel="stylesheet" href="/style.css" />
-  </head>
-  <body>
-    <main class="page" data-quality-ready="true">
-      <header class="header">
-        <a class="brand" href="#home" aria-label="Orbit home">Orbit</a>
-        <div class="account-area">
-          <div class="avatar" id="user-avatar" aria-hidden="true">RL</div>
-          <button
-            type="button"
-            class="trigger"
-            id="account-menu-trigger"
-            aria-expanded="false"
-            aria-haspopup="menu"
-            aria-controls="account-menu"
-          >
-            Me <span aria-hidden="true">⌄</span>
-          </button>
-          <nav id="account-menu" class="menu" aria-label="Account menu" hidden>
-            <a href="#profile">Profile</a>
-            <a href="#billing">Billing</a>
-            <a href="#sign-out">Sign out</a>
-          </nav>
-        </div>
-      </header>
-      <section class="content" aria-labelledby="page-title">
-        <p class="eyebrow">Plain HTML consumer</p>
-        <h1 id="page-title">The contract is stable. The implementation is free.</h1>
-        <p>No component framework and no special test attributes: this adapter maps simple IDs.</p>
-      </section>
-    </main>
-    <script type="module" src="/script.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HTML account menu</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body>
+  <main class="page" data-quality-ready="true">
+    <header class="header">
+      <a class="brand" href="#home" aria-label="Orbit home">Orbit</a>
+      <div class="account-area">
+        <div class="avatar" id="user-avatar" aria-hidden="true">RL</div>
+        <button type="button" class="trigger" id="account-menu-trigger" aria-expanded="false" aria-haspopup="menu"
+          aria-controls="account-menu">
+          Me <span aria-hidden="true">⌄</span>
+        </button>
+        <nav id="account-menu" class="menu" aria-label="Account menu" hidden>
+          <a href="#profile">Profile</a>
+          <a href="#billing">Billing</a>
+          <a href="#sign-out">Sign out</a>
+        </nav>
+      </div>
+    </header>
+    <section class="content" aria-labelledby="page-title">
+      <p class="eyebrow">Plain HTML consumer</p>
+      <h1 id="page-title">The contract is stable. The implementation is free.</h1>
+      <p>No component framework and no special test attributes: this adapter maps simple IDs.</p>
+    </section>
+  </main>
+  <script type="module" src="/script.js"></script>
+</body>
+
 </html>

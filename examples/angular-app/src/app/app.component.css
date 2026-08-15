@@ -1,14 +1,121 @@
-.page { min-height: 100vh; }
-.header { min-height: 72px; display: flex; align-items: center; justify-content: space-between; padding: 0 64px; background: #fff; border-bottom: 3px solid #b6e4d2; }
-.brand { color: #123c32; font-size: 21px; font-weight: 800; letter-spacing: -0.04em; text-decoration: none; }
-.account-area { position: relative; display: flex; gap: 10px; align-items: center; }
-.avatar { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 8px; background: #ccefe2; color: #155e4d; font-size: 12px; font-weight: 800; }
-.trigger { display: inline-flex; gap: 8px; align-items: center; border: 0; border-radius: 999px; background: #155e4d; color: #fff; padding: 10px 14px; font: inherit; font-weight: 700; cursor: pointer; }
-.trigger:hover, .trigger:focus-visible { background: #0f4a3c; outline: 3px solid #b9ecdb; outline-offset: 2px; }
-.menu { position: absolute; top: 48px; right: 0; z-index: 1; width: 190px; display: grid; gap: 4px; padding: 10px; background: #fff; border: 1px solid #b6e4d2; border-radius: 14px 4px 14px 14px; box-shadow: 0 14px 32px rgb(7 79 58 / 19%); }
-.menu a { color: #174a3f; padding: 10px; border-radius: 8px; text-decoration: none; font-size: 14px; }
-.menu a:hover, .menu a:focus-visible { background: #e5f7ef; outline: none; }
-.content { max-width: 760px; padding: 128px 64px; }
-.eyebrow { margin: 0 0 12px; color: #238168; font-size: 14px; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; }
-h1 { margin: 0; max-width: 650px; color: #123c32; font-size: clamp(38px, 5vw, 64px); letter-spacing: -.06em; line-height: 1; }
-.content > p:last-child { max-width: 600px; margin-top: 24px; color: #48645e; font-size: 18px; line-height: 1.6; }
+.page {
+  min-height: 100vh;
+}
+
+.header {
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 64px;
+  background: #fff;
+  border-bottom: 3px solid #b6e4d2;
+}
+
+.brand {
+  color: #123c32;
+  font-size: 21px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  text-decoration: none;
+}
+
+.account-area {
+  position: relative;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.avatar {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background: #ccefe2;
+  color: #155e4d;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.trigger {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  border: 0;
+  border-radius: 999px;
+  background: #155e4d;
+  color: #fff;
+  padding: 10px 14px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.trigger:hover,
+.trigger:focus-visible {
+  background: #0f4a3c;
+  outline: 3px solid #b9ecdb;
+  outline-offset: 2px;
+}
+
+.menu {
+  position: absolute;
+  top: 48px;
+  right: 0;
+  z-index: 1;
+  width: 190px;
+  display: grid;
+  gap: 4px;
+  padding: 10px;
+  background: #fff;
+  border: 1px solid #b6e4d2;
+  border-radius: 14px 4px 14px 14px;
+  box-shadow: 0 14px 32px rgb(7 79 58 / 19%);
+}
+
+.menu a {
+  color: #174a3f;
+  padding: 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.menu a:hover,
+.menu a:focus-visible {
+  background: #e5f7ef;
+  outline: none;
+}
+
+.content {
+  max-width: 760px;
+  padding: 128px 64px;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: #238168;
+  font-size: 14px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+
+h1 {
+  margin: 0;
+  max-width: 650px;
+  color: #123c32;
+  font-size: clamp(38px, 5vw, 64px);
+  letter-spacing: -.06em;
+  line-height: 1;
+}
+
+.content>p:last-child {
+  max-width: 600px;
+  margin-top: 24px;
+  color: #48645e;
+  font-size: 18px;
+  line-height: 1.6;
+}

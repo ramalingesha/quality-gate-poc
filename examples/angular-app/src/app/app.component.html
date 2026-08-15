@@ -1,0 +1,29 @@
+<main class="page" data-quality-ready="true">
+  <header class="header">
+    <a class="brand" href="#home" aria-label="Northstar home">Northstar</a>
+    <div class="account-area">
+      <div class="avatar" data-cy="user-avatar" aria-hidden="true">RL</div>
+      <button
+        type="button"
+        class="trigger"
+        data-cy="account-menu-trigger"
+        [attr.aria-expanded]="menuOpen"
+        aria-haspopup="menu"
+        aria-controls="account-menu"
+        (click)="toggleMenu()"
+      >
+        Your space <span aria-hidden="true">⌄</span>
+      </button>
+      <nav *ngIf="menuOpen" id="account-menu" class="menu" data-cy="account-menu" aria-label="Account menu">
+        <a href="#profile">Profile</a>
+        <a href="#workspace">Workspace</a>
+        <a href="#sign-out">Sign out</a>
+      </nav>
+    </div>
+  </header>
+  <section class="content" aria-labelledby="page-title">
+    <p class="eyebrow">Angular consumer</p>
+    <h1 id="page-title">One contract can outlive any one framework.</h1>
+    <p>This UI has its own markup and selectors. Its adapter absorbs those details.</p>
+  </section>
+</main>

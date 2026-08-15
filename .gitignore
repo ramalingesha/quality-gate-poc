@@ -1,0 +1,7 @@
+node_modules/
+artifacts/*
+!artifacts/.gitkeep
+dist/
+.angular/
+coverage/
+.DS_Store

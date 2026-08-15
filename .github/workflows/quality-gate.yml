@@ -1,0 +1,57 @@
+name: Quality gate
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  gate:
+    name: Contract gate
+    # Screenshot baselines are captured on macOS for this proof of concept.
+    # Keep the runner OS aligned with the environment that approves baselines.
+    runs-on: macos-latest
+    env:
+      PLAYWRIGHT_BROWSERS_PATH: '0'
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check runner logic
+        run: |
+          npm run typecheck
+          npm test
+
+      - name: Install Chromium
+        run: npx playwright install chromium
+
+      - name: Start consumer apps
+        run: |
+          npm run dev:react > /tmp/react-app.log 2>&1 &
+          npm run dev:angular > /tmp/angular-app.log 2>&1 &
+          npm run dev:html > /tmp/html-app.log 2>&1 &
+          npx tsx scripts/wait-for-urls.ts http://127.0.0.1:5173/ http://127.0.0.1:4200/ http://127.0.0.1:4173/
+
+      - name: Run the quality contract
+        run: npm run quality:run
+
+      - name: Upload quality evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: quality-gate-artifacts
+          path: |
+            artifacts/
+            /tmp/react-app.log
+            /tmp/angular-app.log
+            /tmp/html-app.log
+          if-no-files-found: warn

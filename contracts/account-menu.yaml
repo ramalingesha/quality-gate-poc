@@ -1,0 +1,33 @@
+id: account-menu
+description: >
+  Account menu must open, be reachable by keyboard, and match its approved
+  look in every consumer.
+owner: design-system-team
+severity: blocking
+
+viewport:
+  width: 1280
+  height: 800
+
+mask:
+  - user-avatar
+
+states:
+  - name: closed
+    steps:
+      - capture: account-menu-closed
+
+  - name: open
+    steps:
+      - click: account-menu-trigger
+      - wait_for: account-menu
+      - capture: account-menu-open
+      - check_accessibility: account-menu
+
+  - name: keyboard-focus
+    steps:
+      - tab_to: account-menu-trigger
+      - press: Enter
+      - wait_for: account-menu
+      - capture: account-menu-keyboard-open
+      - check_accessibility: account-menu

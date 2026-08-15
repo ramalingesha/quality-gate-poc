@@ -1,0 +1,43 @@
+{
+  "name": "quality-gate-poc",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "author": "Ramalingesha ML",
+  "description": "A contract-driven frontend quality gate proof of concept.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "workspaces": [
+    "examples/*"
+  ],
+  "scripts": {
+    "quality-gate": "tsx runner/src/cli.ts",
+    "quality:run": "tsx runner/src/cli.ts run --contract contracts/account-menu.yaml --all-adapters",
+    "quality:update-baselines": "tsx runner/src/cli.ts update-baselines --contract contracts/account-menu.yaml --all-adapters",
+    "dev:react": "npm run dev --workspace=@quality-gate/react-app",
+    "dev:angular": "npm run dev --workspace=@quality-gate/angular-app",
+    "dev:html": "npm run dev --workspace=@quality-gate/html-app",
+    "dev:all": "tsx scripts/dev-all.ts",
+    "test": "tsx --test runner/test/**/*.test.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "axe-core": "^4.10.3",
+    "commander": "^13.1.0",
+    "js-yaml": "^4.1.0",
+    "pixelmatch": "^6.0.0",
+    "playwright": "^1.52.0",
+    "pngjs": "^7.0.0",
+    "zod": "^3.24.3"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^22.15.3",
+    "@types/pixelmatch": "^5.2.6",
+    "@types/pngjs": "^6.0.5",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.3"
+  }
+}

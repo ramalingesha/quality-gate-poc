@@ -1,0 +1,11 @@
+{
+  "name": "@quality-gate/html-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 4173 --strictPort"
+  },
+  "devDependencies": {
+    "vite": "^6.3.3"
+  }
+}

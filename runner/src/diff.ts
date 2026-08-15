@@ -64,7 +64,7 @@ export async function compareImages(
     diff.data,
     baseline.width,
     baseline.height,
-    { threshold: 0.1, includeAA: false },
+    { threshold: 0.05, includeAA: false },
   );
   const diffPercentage = (differencePixels / (baseline.width * baseline.height)) * 100;
   await writeFile(diffPath, PNG.sync.write(diff));

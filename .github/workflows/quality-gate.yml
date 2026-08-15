@@ -10,17 +10,20 @@ permissions:
 jobs:
   gate:
     name: Contract gate
+
     # Screenshot baselines are captured on macOS for this proof of concept.
     # Keep the runner OS aligned with the environment that approves baselines.
     runs-on: macos-latest
-    env:
-      PLAYWRIGHT_BROWSERS_PATH: '0'
-    steps:
-      - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
+    env:
+      PLAYWRIGHT_BROWSERS_PATH: "0"
+
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v6
         with:
-          node-version: 20
+          node-version: 24
           cache: npm
 
       - name: Install dependencies
@@ -39,14 +42,17 @@ jobs:
           npm run dev:react > /tmp/react-app.log 2>&1 &
           npm run dev:angular > /tmp/angular-app.log 2>&1 &
           npm run dev:html > /tmp/html-app.log 2>&1 &
-          npx tsx scripts/wait-for-urls.ts http://127.0.0.1:5173/ http://127.0.0.1:4200/ http://127.0.0.1:4173/
+          npx tsx scripts/wait-for-urls.ts \
+            http://127.0.0.1:5173/ \
+            http://127.0.0.1:4200/ \
+            http://127.0.0.1:4173/
 
       - name: Run the quality contract
         run: npm run quality:run
 
       - name: Upload quality evidence
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: quality-gate-artifacts
           path: |

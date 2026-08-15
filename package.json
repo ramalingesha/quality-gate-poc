@@ -20,7 +20,7 @@
     "dev:angular": "npm run dev --workspace=@quality-gate/angular-app",
     "dev:html": "npm run dev --workspace=@quality-gate/html-app",
     "dev:all": "tsx scripts/dev-all.ts",
-    "test": "tsx --test runner/test/**/*.test.ts",
+    "test": "tsx --test \"runner/test/**/*.test.ts\"",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
